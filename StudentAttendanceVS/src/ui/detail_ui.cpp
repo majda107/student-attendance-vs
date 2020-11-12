@@ -31,6 +31,7 @@ UI* DetailUI::handle_keys() {
 		std::string house;
 		std::string postal_code;
 		std::string description;
+		std::string type;
 
 		std::cout << "Country: ";
 		std::getline(std::cin, country);
@@ -50,7 +51,10 @@ UI* DetailUI::handle_keys() {
 		std::cout << "Description: ";
 		std::getline(std::cin, description);
 
-		this->m_student->push_adress(Address(country, town, street, house, postal_code, description));
+		std::cout << "Type: ";
+		std::getline(std::cin, type);
+
+		this->m_student->push_adress(Address(country, town, street, house, postal_code, description, ADDRESS_MAP[type]));
 	}
 	else {
 		this->m_pop();

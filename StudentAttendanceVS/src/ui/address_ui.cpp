@@ -10,10 +10,10 @@ AddressUI::AddressUI(StudentHandler* student_handler, Address* address) : UI(stu
 
 void AddressUI::render() {
 	this->m_clean();
-	std::cout << this->m_address->country << std::endl;
-	std::cout << this->m_address->town << ", " << this->m_address->postal_code << std::endl;
-	std::cout << this->m_address->street << ", " << this->m_address->house << std::endl;
-	std::cout << std::endl << this->m_address->description << std::endl;
+	std::cout << "[Country] " << this->m_address->country << std::endl;
+	std::cout << "[Town, Code] " << this->m_address->town << ", " << this->m_address->postal_code << std::endl;
+	std::cout << "[Street, House] " << this->m_address->street << ", " << this->m_address->house << std::endl;
+	std::cout << std::endl << "[Description] " << this->m_address->description << std::endl;
 }
 
 UI* AddressUI::handle_keys() {

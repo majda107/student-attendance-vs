@@ -65,6 +65,7 @@ void StudentHandler::load(std::string filename) {
 	//Address addr;
 
 	if (f.is_open()) {
+		bool push_address = false;
 		std::string line;
 		std::string firstName;
 		std::string lastName;
@@ -75,7 +76,8 @@ void StudentHandler::load(std::string filename) {
 			std::getline(f, line);
 
 			if (line.rfind("-", 0) == 0) {
-				std::getline(f, line);
+				push_address = true;
+				//std::getline(f, line);
 				if (student == nullptr) continue; // SKIP LINE
 
 				auto ss = std::stringstream(line);
@@ -94,7 +96,11 @@ void StudentHandler::load(std::string filename) {
 			else if (line == "") {
 				if (student == nullptr) continue; // SKIP LINE
 
-				student->push_adress(addr);
+				if (push_address) {
+					push_address = false;
+					student->push_adress(addr);
+				}
+
 				addr = Address();
 				continue;
 			}

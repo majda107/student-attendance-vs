@@ -4,8 +4,9 @@
 
 #include "address.h"
 
+
 Address::Address(std::string country, std::string town, std::string street, std::string house,
-	std::string postal_code, std::string description) {
+	std::string postal_code, std::string description, AddressType type) {
 
 	this->country = country;
 	this->town = town;
@@ -13,6 +14,7 @@ Address::Address(std::string country, std::string town, std::string street, std:
 	this->house = house;
 	this->postal_code = postal_code;
 	this->description = description;
+	this->type = type;
 }
 
 Address::Address() {
