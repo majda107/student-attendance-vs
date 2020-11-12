@@ -114,10 +114,10 @@ void StudentHandler::load(std::string filename) {
 				student = this->create_student(firstName, lastName);
 			}
 		}
+
+									f.close();
 	}
 	else {
 		std::cout << "Couldn't open load file...!";
 	}
-
-	f.close();
 }

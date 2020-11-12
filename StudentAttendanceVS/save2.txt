@@ -1,0 +1,35 @@
+Majda Brdkos
+- country test
+- description majdamajda
+- house stes
+- postal_code test
+- street test
+- town test
+- type residence
+
+- country test2
+- description majdat2
+- house t2
+- postal_code t2
+- street 2
+- town test
+- type residence
+
+- country country1
+- description Test desc 4
+- house 69
+- postal_code 100
+- street street3
+- town town2
+- type correspondence
+
+Brystof Bahumensky
+Bebe Bervenka
+- country PEPEC
+- description pepe adresa
+- house PEPEN
+- postal_code PEPEC
+- street PEPES
+- town PEPET
+- type residence
+

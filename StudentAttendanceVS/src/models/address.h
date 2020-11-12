@@ -35,6 +35,18 @@ public:
 	std::string postal_code;
 	std::string description;
 	AddressType type;
+
+	bool operator==(const Address& address) const noexcept
+	{
+		return
+			this->country == address.country &&
+			this->town == address.town &&
+			this->street == address.street &&
+			this->house == address.house &&
+			this->postal_code == address.postal_code &&
+			this->description == address.description &&
+			this->type == address.type;
+	}
 };
 
 

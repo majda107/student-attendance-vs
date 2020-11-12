@@ -4,6 +4,7 @@
 
 #include "detail_ui.h"
 #include "address_ui.h"
+#include <conio.h>
 
 DetailUI::DetailUI(StudentHandler* student_handler, Student* student) : UI(student_handler) {
 	this->m_student = student;
@@ -11,27 +12,20 @@ DetailUI::DetailUI(StudentHandler* student_handler, Student* student) : UI(stude
 
 UI* DetailUI::handle_keys() {
 
-	std::string cmd;
-	std::getline(std::cin, cmd);
+	char c = _getch();
 
-	if (cmd == "n") this->move_next();
-	else if (cmd == "p") this->move_prev();
-	else if (cmd == "remove") {
+	if (c == 'j') this->move_next();
+	else if (c == 'k') this->move_prev();
+	else if (c == 'd') {
 		this->m_pop();
 		this->m_student_handler->remove_student(this->m_student);
 	}
-	else if (cmd == "") {
+	else if (c == '\r') {
 		if (this->m_student->get_addresses()->size() <= 0) return nullptr;
-		return new AddressUI(this->m_student_handler, &(*this->m_student->get_addresses())[this->m_index]);
+		return new AddressUI(this->m_student_handler, this->m_student, &(*this->m_student->get_addresses())[this->m_index]);
 	}
-	else if (cmd == "new") {
-		std::string country;
-		std::string town;
-		std::string street;
-		std::string house;
-		std::string postal_code;
-		std::string description;
-		std::string type;
+	else if (c == 'n') {
+		std::string country, town, street, house, postal_code, description, type;
 
 		std::cout << "Country: ";
 		std::getline(std::cin, country);
@@ -65,6 +59,7 @@ UI* DetailUI::handle_keys() {
 
 void DetailUI::render() {
 	this->m_clean();
+	std::cout << "[j] - DOWN, [k] - UP, [d] - DELETE STUDENT, [enter] - DETAIL, [b] - BACK" << std::endl << std::endl;
 	std::cout << this->m_student->first_name << " " << this->m_student->last_name << std::endl << std::endl;
 
 	//    for (auto address: *this->m_student->get_addresses()) {

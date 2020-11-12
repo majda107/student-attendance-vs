@@ -3,9 +3,11 @@
 //
 
 #include "address_ui.h"
+#include <conio.h>
 
-AddressUI::AddressUI(StudentHandler* student_handler, Address* address) : UI(student_handler) {
+AddressUI::AddressUI(StudentHandler* student_handler, Student* student, Address* address) : UI(student_handler) {
 	this->m_address = address;
+	this->m_student = student;
 }
 
 void AddressUI::render() {
@@ -18,8 +20,12 @@ void AddressUI::render() {
 }
 
 UI* AddressUI::handle_keys() {
-	std::string cmd;
-	std::getline(std::cin, cmd);
+	char c = _getch();
+
+	if (c == 'd') {
+		//auto addresses = this->m_student->get_addresses();
+		this->m_student->remove_address(*this->m_address);
+	}
 
 	this->m_pop();
 	return nullptr;

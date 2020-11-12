@@ -4,6 +4,7 @@
 
 #include "student_ui.h";
 #include "detail_ui.h";
+#include <iostream>
 #include <conio.h>;
 
 StudentUI::StudentUI(StudentHandler* student_handler) : UI(student_handler) {
@@ -25,8 +26,21 @@ UI* StudentUI::handle_keys() {
 	if (c == 'j') this->move_next();
 	else if (c == 'k') this->move_prev();
 	else if (c == 'e') this->m_pop();
+	else if (c == 'n') {
+		std::string given_name, family_name;
+
+		std::cout << "Given name: ";
+		std::getline(std::cin, given_name);
+
+		std::cout << "Family name: ";
+		std::getline(std::cin, family_name);
+
+		this->m_student_handler->create_student(given_name, family_name);
+	}
 	else if (c == '\r') {
-		return new DetailUI(this->m_student_handler, this->m_student_handler->students[this->m_index]);
+		if (this->m_index < this->m_student_handler->students.size()) {
+			return new DetailUI(this->m_student_handler, this->m_student_handler->students[this->m_index]);
+		}
 	}
 
 
@@ -35,7 +49,8 @@ UI* StudentUI::handle_keys() {
 
 void StudentUI::render() {
 	this->m_clean();
-	std::cout << "Students in registry..." << std::endl << std::endl;
+	std::cout << "[j] - DOWN, [k] - UP, [enter] - EDIT, [e] - EXIT" << std::endl << std::endl;
+	std::cout << "Students in registry..." << std::endl << std::endl << std::endl;
 
 	// RESET INDEX
 	if (this->m_index < 0 || this->m_index >= this->m_student_handler->students.size()) this->move_next();

@@ -13,14 +13,15 @@
 
 class AddressUI : public UI {
 public:
-    AddressUI(StudentHandler *student_handler, Address *address);
+	AddressUI(StudentHandler* student_handler, Student* student, Address* address);
 
-    virtual void render();
+	virtual void render();
 
-    virtual UI *handle_keys();
+	virtual UI* handle_keys();
 
 private:
-    Address *m_address;
+	Address* m_address;
+	Student* m_student;
 };
 
 

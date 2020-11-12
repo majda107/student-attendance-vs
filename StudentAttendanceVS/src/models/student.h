@@ -22,6 +22,8 @@ public:
     // METHODS
     void push_adress(Address address);
 
+    void remove_address(Address address);
+
     // GETTERS SETTERS
     std::vector<Address> *get_addresses() {
         return this->m_adresses;
