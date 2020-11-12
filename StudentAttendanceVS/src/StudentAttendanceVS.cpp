@@ -4,6 +4,8 @@
 
 int main() {
 
+	setlocale(LC_ALL, "");
+
 	UIHandler ui;
 	ui.student_handler->load("save.txt");
 

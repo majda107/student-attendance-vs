@@ -145,6 +145,8 @@
     <ClCompile Include="src\models\student.cpp" />
     <ClCompile Include="src\StudentAttendanceVS.cpp" />
     <ClCompile Include="src\ui\address_ui.cpp" />
+    <ClCompile Include="src\ui\components\base_component.cpp" />
+    <ClCompile Include="src\ui\components\enum_picker_component.cpp" />
     <ClCompile Include="src\ui\detail_ui.cpp" />
     <ClCompile Include="src\ui\student_ui.cpp" />
     <ClCompile Include="src\ui\ui.cpp" />
@@ -155,6 +157,8 @@
     <ClInclude Include="src\models\address.h" />
     <ClInclude Include="src\models\student.h" />
     <ClInclude Include="src\ui\address_ui.h" />
+    <ClInclude Include="src\ui\components\base_component.h" />
+    <ClInclude Include="src\ui\components\enum_picker_component.h" />
     <ClInclude Include="src\ui\detail_ui.h" />
     <ClInclude Include="src\ui\student_ui.h" />
     <ClInclude Include="src\ui\ui.h" />

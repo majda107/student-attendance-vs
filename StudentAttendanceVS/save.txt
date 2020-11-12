@@ -7,3 +7,11 @@ Majda Trpkos
 - town ede
 - type residence
 
+- country Czech republic
+- description Haha ulice
+- house 69
+- postal_code 501801
+- street Jiraskova 107
+- town Dobruska
+- type residence
+
