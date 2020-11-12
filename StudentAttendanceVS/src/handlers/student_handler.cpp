@@ -45,6 +45,7 @@ void StudentHandler::save(std::string filename) {
 				f << "- postal_code " << address.postal_code << std::endl;
 				f << "- street " << address.street << std::endl;
 				f << "- town " << address.town << std::endl;
+				f << "- type " << ADDRESS_STRING_MAP[address.type] << std::endl;
 				f << std::endl;
 			}
 		}
@@ -92,6 +93,7 @@ void StudentHandler::load(std::string filename) {
 				if (firstName == "postal_code") addr.postal_code = lastName;
 				if (firstName == "description") addr.description = lastName;
 				if (firstName == "street") addr.street = lastName;
+				if (firstName == "type") addr.type = STRING_ADDRESS_MAP[lastName];
 			}
 			else if (line == "") {
 				if (student == nullptr) continue; // SKIP LINE

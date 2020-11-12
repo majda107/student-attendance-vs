@@ -9,10 +9,16 @@
 #include <map>
 
 enum AddressType { Residence, Correspondence, Representative };
-static std::map<std::string, AddressType> ADDRESS_MAP = {
+static std::map<std::string, AddressType> STRING_ADDRESS_MAP = {
 	{"residence", AddressType::Residence},
 	{"correspondence", AddressType::Correspondence},
 	{"representative", AddressType::Representative}
+};
+
+static std::map<AddressType, std::string> ADDRESS_STRING_MAP = {
+	{AddressType::Residence, "residence"},
+	{AddressType::Correspondence, "correspondence"},
+	{AddressType::Representative, "representative"},
 };
 
 class Address {
