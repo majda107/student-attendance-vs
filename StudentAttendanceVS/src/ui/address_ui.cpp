@@ -12,6 +12,11 @@ AddressUI::AddressUI(StudentHandler* student_handler, Student* student, Address*
 
 void AddressUI::render() {
 	this->m_clean();
+
+	std::cout << "[d] - DELETE ADDRESS" << std::endl;
+	this->m_render_separator();
+	std::cout << std::endl;
+
 	std::cout << "[Type] " << ADDRESS_STRING_MAP[this->m_address->type] << std::endl;
 	std::cout << "[Country] " << this->m_address->country << std::endl;
 	std::cout << "[Town, Code] " << this->m_address->town << ", " << this->m_address->postal_code << std::endl;

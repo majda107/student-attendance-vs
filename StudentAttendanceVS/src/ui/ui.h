@@ -21,7 +21,9 @@ protected:
 	StudentHandler* m_student_handler;
 
 	void m_pop() { this->m_should_pop = true; }
+
 	void m_clean();
+	void m_render_separator();
 
 private:
 	bool m_should_pop = false;

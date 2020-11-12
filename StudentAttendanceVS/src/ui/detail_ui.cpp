@@ -59,7 +59,8 @@ UI* DetailUI::handle_keys() {
 
 void DetailUI::render() {
 	this->m_clean();
-	std::cout << "[j] - DOWN, [k] - UP, [d] - DELETE STUDENT, [enter] - DETAIL, [b] - BACK" << std::endl << std::endl;
+	std::cout << "[j] - DOWN, [k] - UP, [d] - DELETE STUDENT, [enter] - DETAIL, [b] - BACK" << std::endl;
+	this->m_render_separator();
 	std::cout << this->m_student->first_name << " " << this->m_student->last_name << std::endl << std::endl;
 
 	//    for (auto address: *this->m_student->get_addresses()) {

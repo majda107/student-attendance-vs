@@ -14,3 +14,8 @@ void UI::m_clean()
 {
 	std::cout << "\x1B[2J\x1B[H";
 }
+
+void UI::m_render_separator()
+{
+	std::cout << "=========================================" << std::endl;
+}

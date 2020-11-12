@@ -49,8 +49,9 @@ UI* StudentUI::handle_keys() {
 
 void StudentUI::render() {
 	this->m_clean();
-	std::cout << "[j] - DOWN, [k] - UP, [enter] - EDIT, [e] - EXIT" << std::endl << std::endl;
-	std::cout << "Students in registry..." << std::endl << std::endl << std::endl;
+	std::cout << "[j] - DOWN, [k] - UP, [enter] - EDIT, [e] - EXIT" << std::endl;
+	this->m_render_separator();
+	std::cout << "Students in registry..." << std::endl << std::endl;
 
 	// RESET INDEX
 	if (this->m_index < 0 || this->m_index >= this->m_student_handler->students.size()) this->move_next();
